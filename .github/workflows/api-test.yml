@@ -14,4 +14,4 @@ jobs:
       - name: Npm Install
         run: npm ci
       - name: __tests__
-        run: jest
+        run: gh repo clone JetiMax/FrTest
