@@ -1,5 +1,8 @@
 name: Api Tests
-on: [push]
+on: 
+  push:
+    branches:
+        -master
 jobs:
   Test:
     runs-on: ubuntu-latest
@@ -13,7 +16,5 @@ jobs:
           cache: npm
       - name: Npm Install
         run: npm ci
-      - name: __Test
-      - name: Run __tests__
-        run: echo "🎉 ${{ __tests__ }} event."
+      - name: Run Tests
         run: npm run test
