@@ -1,4 +1,6 @@
 name: Api Tests
+env:
+    GH_TOKEN: ${{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}}
 on: [push]
 jobs:
   Test:
