@@ -13,5 +13,7 @@ jobs:
           cache: npm
       - name: Npm Install
         run: npm ci
-      - name: Run Tests
+      - name: __Test
+      - name: Run __tests__
+        run: echo "🎉 ${{ __tests__ }} event."
         run: npm run test
