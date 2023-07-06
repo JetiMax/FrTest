@@ -13,7 +13,6 @@ jobs:
           cache: npm
       - name: Npm Install
         run: npm ci
-      - name: __tests__
-        run: gh repo clone JetiMax/FrTest
-        env:
-             GH_TOKEN: ${{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}}
+      - name: Run Tests
+        run: npm run test
+        
