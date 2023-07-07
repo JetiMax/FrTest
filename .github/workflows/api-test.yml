@@ -1,18 +1,20 @@
-name: __tests__
+name: Api Test
 on: [push]
 jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Setup node
+        uses: actions/setup-node@v1.2.1
         with:
-          node-version: 16.x
+          node-version: 16.13.x
           cache: npm
-      - name: Npm Install
-        run: npm ci
-      - name: Run __tests__
+          persist-credentials: false
+
+      - name: Run Tests
         run: npm run test
+      
+
         
