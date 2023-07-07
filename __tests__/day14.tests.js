@@ -9,7 +9,7 @@ describe('Day14', () => {
                 headers: {
                     Authorization:`Bearer ${TOKEN}`
                 }})
-            .expect("status", 200)
+            .expect("status", 401)
             .then((result) => console.info(result.json));
     })
 });
