@@ -13,7 +13,7 @@ describe("Day24", () => {
     it("random dad joke", function () {
         return frisby
             .get(`https://icanhazdadjoke.com/search?term=${randomWord}`)
-            .expect("status", 403)
+            .expect("status", 200)
     })
 });
 
