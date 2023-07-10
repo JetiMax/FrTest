@@ -1,4 +1,7 @@
 const frisby = require("frisby");
+const {Joi} = require("frisby");
+
+
 describe(" Day 8: Run a collection", () => {
     it ('get random user', function () {
         return frisby
@@ -13,15 +16,13 @@ describe(" Day 8: Run a collection", () => {
 });
 
 describe(" Day 8: Run a collection", () => {
-    it ('get female user', function () {
-        return frisby
-            .get('https://randomuser.me/api/?gender=female&result=1')
-            .expect('status', 200)
-            .then(function(res){
-                var data = JSON.parse(res['_body']);
-                console.log(data.results[0]['gender']['female']);
-                expect(data.results[0]['gender']).toBe('female');
-            })
+    it("Check non-empty response with female gender", async function () {
+        const result = await frisby
+            .get("https://randomuser.me/api/?gender=female")
+            .expect("status", 200)
+            .expect("jsonTypes", "results.0.gender", Joi.string().valid("female"));
+        console.log(result.json);
+
     });
 });
 
@@ -36,6 +37,7 @@ it ('get french user', function () {
             }
         });
 });
+
 
 
 
