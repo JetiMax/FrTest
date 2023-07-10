@@ -2,7 +2,7 @@ const frisby = require("frisby");
 const {Joi} = require("frisby");
 
 
-describe(" Day 8: Run a collection", () => {
+describe(" day 8", () => {
     it ('get random user', function () {
         return frisby
             .get('https://randomuser.me/api')
@@ -15,8 +15,8 @@ describe(" Day 8: Run a collection", () => {
     });
 });
 
-describe(" Day 8: Run a collection", () => {
-    it("Check non-empty response with female gender", async function () {
+describe("day 8", () => {
+    it(" female gender", async function () {
         const result = await frisby
             .get("https://randomuser.me/api/?gender=female")
             .expect("status", 200)
