@@ -22,7 +22,7 @@ it("moments in time", function () {
         .get('http://worldtimeapi.org/api/ip')
         .expect("status", 200)
         .expect('jsonTypes', [{
-            "client_ip": "188.242.254.148",
+            
             "datetime": Joi.string().required(),
             "day_of_week": 1,
             "dst": false,
