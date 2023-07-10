@@ -7,7 +7,7 @@ describe("Day24", () => {
         return frisby
 
             .get(`https://icanhazdadjoke.com/search?term=${randomWord}`)
-            .expect("status", 403)
+            .expect("status", 200)
     })
 });
 
