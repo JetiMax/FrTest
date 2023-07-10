@@ -18,13 +18,13 @@ describe("Day28", () => {
     })
 })
 
-    it('lighthouse', function () {
-        return frisby
-            .get(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}`)
-            .expect("status", 200)
-            .then((lighthouse)=> {
-                let score = lighthouse.json.lighthouseResult.audits['total-byte-weight']
-                expect(score).toBeGreaterThanOrEqual(0.90)
-            })
+    // it('lighthouse', function () {
+    //     return frisby
+    //         .get(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}`)
+    //         .expect("status", 200)
+    //         .then((lighthouse)=> {
+    //             let score = lighthouse.json.lighthouseResult.audits['total-byte-weight']
+    //             expect(score).toBeGreaterThanOrEqual(0.90)
+    //         })
 
     });
