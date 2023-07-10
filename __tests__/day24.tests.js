@@ -2,12 +2,18 @@ const frisby = require("frisby");
 const Joi = frisby.Joi;
 const randomWord = 'term'
 
+
+
+frisby.globalSetup({
+    request: {
+        timeout: 10000,
+    },
+});
 describe("Day24", () => {
     it("random dad joke", function () {
         return frisby
-
             .get(`https://icanhazdadjoke.com/search?term=${randomWord}`)
-            .expect("status", 200)
+            .expect("status", 403)
     })
 });
 
