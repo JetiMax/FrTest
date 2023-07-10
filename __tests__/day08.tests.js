@@ -6,7 +6,7 @@ describe(" Day 8: Run a collection", () => {
             .expect('status', 200)
             .then(function(res){
                 var data = JSON.parse(res['_body']);
-                console.log(data.results[0]['gender']['female']||['male']);
+                console.log(data.results[0]['gender']['female']);
                 expect(data.results[0]['gender']).toBe('female');
             })
     });
@@ -36,6 +36,7 @@ it ('get french user', function () {
             }
         });
 });
+
 
 
 
