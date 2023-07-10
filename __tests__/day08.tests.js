@@ -7,7 +7,7 @@ describe(" Day 8: Run a collection", () => {
             .then(function(res){
                 var data = JSON.parse(res['_body']);
                 console.log(data.results[0]['gender']['female']||['male']);
-                expect(data.results[0]['gender']).toBe('female')||('male') ;
+                expect(data.results[0]['gender']).toBe('female');
             })
     });
 });
